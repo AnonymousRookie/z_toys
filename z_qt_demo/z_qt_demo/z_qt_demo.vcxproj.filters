@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{7189aa99-5839-45b6-bade-614ace467ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UIDialog">
+      <UniqueIdentifier>{2adc3d1f-acd8-4299-9148-5973b8208de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UIDialog\basedwidget">
+      <UniqueIdentifier>{f2d4d94a-9476-44f3-8d66-7377d51782b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{7284957c-7a73-4ba6-9867-2107d980f525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\qss">
+      <UniqueIdentifier>{75c40d0b-868f-461f-a7f7-6b9d89985d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\ui">
+      <UniqueIdentifier>{5153ec04-3837-4e35-9a63-ca6aa46f133a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\qm">
+      <UniqueIdentifier>{bcf46d1f-758d-4093-bddb-d8ff7cfe9078}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\string_util.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\top_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\body_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\basedwidget\popup_widget.cpp">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\basedwidget\loading_dialog.cpp">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\basedwidget\image_button.cpp">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\basedwidget\based_widget.cpp">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\basedwidget\based_styleshet_widget.cpp">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\qt_qemo.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\UIDialog\top_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\body_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\basedwidget\popup_widget.h">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\basedwidget\loading_dialog.h">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\basedwidget\image_button.h">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\basedwidget\based_widget.h">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\basedwidget\based_styleshet_widget.h">
+      <Filter>src\UIDialog\basedwidget</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\qt_qemo.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\UIDialog\defines.h">
+      <Filter>src\UIDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\defines.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\string_util.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qss\default.qss">
+      <Filter>Resources\qss</Filter>
+    </None>
+    <None Include="Resources\qm\qt_demo_en.ts">
+      <Filter>Resources\qm</Filter>
+    </None>
+    <None Include="Resources\qm\qt_demo_zh.ts">
+      <Filter>Resources\qm</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="Resources\ui\qt_demo.qrc">
+      <Filter>Resources\ui</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Resources\ui\qt_demo.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\loading_dialog.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

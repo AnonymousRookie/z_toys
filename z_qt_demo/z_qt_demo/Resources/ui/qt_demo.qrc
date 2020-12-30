@@ -1,0 +1,52 @@
+﻿<RCC>
+    <qresource prefix="qt_demo">
+        <file alias="qss">../qss/default.qss</file>
+        <file alias="icon">../images/logo.ico</file>
+        <file alias="title_background">../images/title_background.png</file>
+        <file alias="soft_name_background">../images/soft_name_background.png</file>
+        <file alias="phone_background">../images/phone_background.png</file>
+        <file alias="phone_icon">../images/phone.png</file>
+        <file alias="datetime_background">../images/datetime_background.png</file>
+        <file alias="min">../images/min.png</file>
+        <file alias="max">../images/max.png</file>
+        <file alias="restore">../images/restore.png</file>
+        <file alias="close">../images/close.png</file>
+        <file alias="btn_left_normal">../images/btn_left_normal.png</file>
+        <file alias="btn_left_pressed">../images/btn_left_pressed.png</file>
+        <file alias="btn_right_normal">../images/btn_right_normal.png</file>
+        <file alias="btn_right_pressed">../images/btn_right_pressed.png</file>
+        <file alias="prealarm">../images/prealarm.png</file>
+        <file alias="loading">../images/loading.gif</file>
+    </qresource>
+
+    <qresource prefix="func_btn">
+        <file alias="func_btn_normal">../images/func_btn/func_btn_normal.png</file>
+        <file alias="func_btn_hover">../images/func_btn/func_btn_hover.png</file>
+        <file alias="func_btn_press">../images/func_btn/func_btn_press.png</file>
+        <file alias="func_btn_disable">../images/func_btn/func_btn_disable.png</file>
+        <file alias="func_btn_alarm">../images/func_btn/func_btn_alarm.png</file>
+
+        <file alias="func_btn_icon_1000">../images/func_btn/1000.png</file>
+        <file alias="func_btn_icon_1001">../images/func_btn/1001.png</file>
+        <file alias="func_btn_icon_1002">../images/func_btn/1002.png</file>
+        <file alias="func_btn_icon_1003">../images/func_btn/1003.png</file>
+        <file alias="func_btn_icon_1004">../images/func_btn/1004.png</file>
+        <file alias="func_btn_icon_1005">../images/func_btn/1005.png</file>
+        <file alias="func_btn_icon_1006">../images/func_btn/1006.png</file>
+        <file alias="func_btn_icon_1007">../images/func_btn/1007.png</file>
+    </qresource>
+
+    <qresource prefix="checkbox">
+        <file alias="checkbox_hover">../images/checkbox/checkbox_hover.png</file>
+        <file alias="checkbox_normal">../images/checkbox/checkbox_normal.png</file>
+        <file alias="checkbox_press">../images/checkbox/checkbox_press.png</file>
+        <file alias="checkbox_selected_hover">../images/checkbox/checkbox_selected_hover.png</file>
+        <file alias="checkbox_selected_normal">../images/checkbox/checkbox_selected_normal.png</file>
+        <file alias="checkbox_selected_press">../images/checkbox/checkbox_selected_press.png</file>
+    </qresource>
+
+    <qresource prefix="qm">
+        <file alias="qt_demo_zh">../qm/qt_demo_zh.qm</file>
+        <file alias="qt_demo_en">../qm/qt_demo_en.qm</file>
+    </qresource>
+</RCC>
