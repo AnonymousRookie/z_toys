@@ -3,6 +3,12 @@
 #include "top_widget.h"
 #include "body_widget.h"
 #include "defines.h"
+#include "buttons_widget.h"
+#include "display_widgets_widget.h"
+#include "input_widgets_widget.h"
+#include "item_views_widget.h"
+#include "item_widgets_widget.h"
+
 
 QtDemo::QtDemo(QWidget *parent)
     : QWidget(parent)
@@ -37,12 +43,17 @@ void QtDemo::initUi()
     int xOffset = 0;
     int yOffset = 0;
 
-    m_topWidget = std::make_shared<TopWidget>(this);
+    m_topWidget = std::make_unique<TopWidget>(this);
     m_topWidget->show();
 
     m_bodyWidget = new BodyWidget(this);
     m_bodyWidget->show();
 
+    m_buttonsWidget = std::make_unique<ButtonsWidget>(m_bodyWidget);
+    m_displayWidgetsWidget = std::make_unique<DisplayWidgetsWidget>(m_bodyWidget);
+    m_inputWidgetsWidget = std::make_unique<InputWidgetsWidget>(m_bodyWidget);
+    m_itemViewsWidget = std::make_unique<ItemViewsWidget>(m_bodyWidget);
+    m_itemWidgetsWidget = std::make_unique<ItemWidgetsWidget>(m_bodyWidget);
 }
 
 void QtDemo::initConnect()
@@ -81,14 +92,25 @@ void QtDemo::onMenuBtnClicked(int btnId)
     switch (btnId)
     {
     case FunctionType_Buttons:
+        m_buttonsWidget->show();
         break;
-
+    case FunctionType_DisplayWidgets:
+        m_displayWidgetsWidget->show();
+        break;
+    case FunctionType_ItemViews:
+        m_itemViewsWidget->show();
+        break;
+    case FunctionType_ItemWidgets:
+        m_itemWidgetsWidget->show();
+        break;
+    case FunctionType_InputWidgets:
+        m_inputWidgetsWidget->show();
+        break;
     default:
         break;
     }
     hideOtherWidget(btnId);
 }
-
 
 void QtDemo::hideOtherWidget(int showId)
 {
@@ -102,6 +124,19 @@ void QtDemo::hideOtherWidget(int showId)
         switch (btnId)
         {
         case FunctionType_Buttons:
+            m_buttonsWidget->hide();
+            break;
+        case FunctionType_DisplayWidgets:
+            m_displayWidgetsWidget->hide();
+            break;
+        case FunctionType_ItemViews:
+            m_itemViewsWidget->hide();
+            break;
+        case FunctionType_ItemWidgets:
+            m_itemWidgetsWidget->hide();
+            break;
+        case FunctionType_InputWidgets:
+            m_inputWidgetsWidget->hide();
             break;
         default:
             break;

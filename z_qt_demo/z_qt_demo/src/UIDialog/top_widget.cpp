@@ -55,9 +55,6 @@ void TopWidget::initTitle()
     QRect screen = desktop->screenGeometry();
     setFixedSize(screen.width(), TITLE_HEIGHT);
 
-    std::string strStnNo;
-    std::string strStnName;
-
     m_softNameLabel = std::make_shared<QLabel>(this);
     m_softNameLabel->resize(277, 26);
     m_softNameLabel->move(10, 3);
@@ -69,7 +66,7 @@ void TopWidget::initTitle()
     m_stationNameLabel->resize(200, 26);
     m_stationNameLabel->move(screen.width() / 2 - m_stationNameLabel->width() / 2, 3);
     m_stationNameLabel->setObjectName("StationNameLabel");
-    m_stationNameLabel->setText(tr("%1").arg(strStnName.c_str()));
+    m_stationNameLabel->setText(tr("ZQtDemo"));
     m_stationNameLabel->setAlignment(Qt::AlignCenter);
 
     m_datetimeLabel = std::make_shared<QLabel>(this);

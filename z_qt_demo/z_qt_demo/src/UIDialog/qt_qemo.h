@@ -9,6 +9,11 @@ class QTranslator;
 
 class TopWidget;
 class BodyWidget;
+class ButtonsWidget;
+class DisplayWidgetsWidget;
+class InputWidgetsWidget;
+class ItemViewsWidget;
+class ItemWidgetsWidget;
 
 class QtDemo : public QWidget
 {
@@ -38,8 +43,13 @@ public:
 private:
     Ui::QtDemoClass m_ui;
     std::shared_ptr<QTranslator> m_translator = nullptr;
-
-    std::shared_ptr<TopWidget> m_topWidget = nullptr;
+    std::unique_ptr<TopWidget> m_topWidget = nullptr;
     BodyWidget* m_bodyWidget = nullptr;
+
+    std::unique_ptr<ButtonsWidget> m_buttonsWidget = nullptr;
+    std::unique_ptr<DisplayWidgetsWidget> m_displayWidgetsWidget = nullptr;
+    std::unique_ptr<InputWidgetsWidget> m_inputWidgetsWidget = nullptr;
+    std::unique_ptr<ItemViewsWidget> m_itemViewsWidget = nullptr;
+    std::unique_ptr<ItemWidgetsWidget> m_itemWidgetsWidget = nullptr;
 };
 

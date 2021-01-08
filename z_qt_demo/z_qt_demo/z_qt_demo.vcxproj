@@ -119,6 +119,11 @@
     <ClCompile Include="src\UIDialog\basedwidget\loading_dialog.cpp" />
     <ClCompile Include="src\UIDialog\basedwidget\popup_widget.cpp" />
     <ClCompile Include="src\UIDialog\body_widget.cpp" />
+    <ClCompile Include="src\UIDialog\buttons_widget.cpp" />
+    <ClCompile Include="src\UIDialog\display_widgets_widget.cpp" />
+    <ClCompile Include="src\UIDialog\input_widgets_widget.cpp" />
+    <ClCompile Include="src\UIDialog\item_views_widget.cpp" />
+    <ClCompile Include="src\UIDialog\item_widgets_widget.cpp" />
     <ClCompile Include="src\UIDialog\qt_qemo.cpp" />
     <ClCompile Include="src\UIDialog\top_widget.cpp" />
   </ItemGroup>
@@ -132,6 +137,10 @@
     <QtMoc Include="src\UIDialog\basedwidget\image_button.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\UIDialog\item_widgets_widget.h" />
+    <QtMoc Include="src\UIDialog\item_views_widget.h" />
+    <QtMoc Include="src\UIDialog\input_widgets_widget.h" />
+    <QtMoc Include="src\UIDialog\display_widgets_widget.h" />
     <QtMoc Include="src\UIDialog\qt_qemo.h" />
     <QtMoc Include="src\UIDialog\basedwidget\loading_dialog.h" />
     <QtMoc Include="src\UIDialog\basedwidget\popup_widget.h" />
@@ -140,9 +149,15 @@
     <ClInclude Include="src\defines.h" />
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\string_util.h" />
+    <QtMoc Include="src\UIDialog\buttons_widget.h" />
     <ClInclude Include="src\UIDialog\defines.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Resources\ui\buttons.ui" />
+    <QtUic Include="Resources\ui\display_widgets.ui" />
+    <QtUic Include="Resources\ui\input_widgets.ui" />
+    <QtUic Include="Resources\ui\item_views.ui" />
+    <QtUic Include="Resources\ui\item_widgets.ui" />
     <QtUic Include="Resources\ui\loading_dialog.ui" />
     <QtUic Include="Resources\ui\qt_demo.ui" />
   </ItemGroup>

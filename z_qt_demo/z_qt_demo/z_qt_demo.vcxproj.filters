@@ -57,6 +57,21 @@
     <ClCompile Include="src\UIDialog\qt_qemo.cpp">
       <Filter>src\UIDialog</Filter>
     </ClCompile>
+    <ClCompile Include="src\UIDialog\buttons_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\display_widgets_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\input_widgets_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\item_views_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIDialog\item_widgets_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\UIDialog\top_widget.h">
@@ -81,6 +96,21 @@
       <Filter>src\UIDialog\basedwidget</Filter>
     </QtMoc>
     <QtMoc Include="src\UIDialog\qt_qemo.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\buttons_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\display_widgets_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\input_widgets_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\item_views_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\item_widgets_widget.h">
       <Filter>src\UIDialog</Filter>
     </QtMoc>
   </ItemGroup>
@@ -119,6 +149,21 @@
       <Filter>Resources\ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\loading_dialog.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\buttons.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\display_widgets.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\input_widgets.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\item_views.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\item_widgets.ui">
       <Filter>Resources\ui</Filter>
     </QtUic>
   </ItemGroup>
