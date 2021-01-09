@@ -29,8 +29,8 @@ QWidget#HistoryDataReplayToolBarWidget {
 /**************************** QLineEdit ****************************/
 QLineEdit {
     background-color:#012D5B;
-	border:none; 
-	color: white;
+    border:none; 
+    color: white;
     font-family: "Microsoft YaHei";
     font-size: 16px;
 }
@@ -151,39 +151,58 @@ QLabel[parent="LoadingDialog"] {
 }
 
 /**************************** QCheckBox ****************************/
-
 QCheckBox {
     color:white;
     font-family: "Microsoft YaHei";
     font-size: 14px;
 }
 
-QCheckBox::indicator
-{     
+QCheckBox::indicator {     
      width: 14px;
      height:14px;     
 }
 
-QCheckBox::indicator:!checked
-{
+QCheckBox::indicator:!checked {
     border-image:url(:/checkbox/checkbox_normal) 0 0 0 0 stretch stretch;
 }
 
-QCheckBox::indicator:hover:!checked
-{
+QCheckBox::indicator:hover:!checked {
     border-image:url(:/checkbox/checkbox_hover) 0 0 0 0 stretch stretch;
 }
 
-QCheckBox::indicator:checked
-{
+QCheckBox::indicator:checked {
     border-image:url(:/checkbox/checkbox_selected_normal) 0 0 0 0 stretch stretch;
 }
 
-QCheckBox::indicator:checked:hover
-{
+QCheckBox::indicator:checked:hover {
     border-image:url(:/checkbox/checkbox_selected_hover) 0 0 0 0 stretch stretch;
 }
 
+QCheckBox[group="CheckBoxGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#012D5B;
+}
+
+QCheckBox::indicator[group="CheckBoxGroup2"] {     
+	width: 0px;
+	height: 0px;  
+}
+
+QCheckBox::checked[group="CheckBoxGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#003B90;
+}
+
+QCheckBox::hover[group="CheckBoxGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#11ABFF;
+}
 /**************************** QPushButton ****************************/
 QPushButton {
     color: white;
@@ -225,6 +244,38 @@ QRadioButton:pressed {
     font-size: 14px;
 }
 
+QRadioButton[group="RadioBtnGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#012D5B;
+}
+
+QRadioButton:hover[group="RadioBtnGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#11ABFF;
+}
+
+QRadioButton:pressed[group="RadioBtnGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#003B90;
+}
+
+QRadioButton::indicator[group="RadioBtnGroup2"] {
+   width: 0px;
+   height: 0px;
+}
+
+QRadioButton:checked[group="RadioBtnGroup2"] {
+    color: white;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    background-color:#003B90;
+}
 /**************************** QHeaderView ****************************/
 QHeaderView {
     background:transparent; 
