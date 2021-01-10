@@ -41,6 +41,8 @@ private:
     };
 
     void setState(States state);
+    const char* getState(States state);
+
     void startInLoop();
     void stopInLoop();
 

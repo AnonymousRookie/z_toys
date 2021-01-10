@@ -14,6 +14,7 @@ TcpServer::TcpServer(EventLoop* loop, const NetAddress& listenAddr, const std::s
     , threadPool_(new EventLoopThreadPool(loop, name))
     , connectionCallback_(defaultConnectionCallback)
     , messageCallback_(defaultMessageCallback)
+    , started_(false)
     , nextConnId_(1)
 {
     acceptor_->setNewConnectionCallback(std::bind(&TcpServer::newConnection, this, _1, _2));
@@ -71,7 +72,7 @@ void TcpServer::newConnection(int sockfd, const NetAddress& peerAddr)
     ++nextConnId_;
     std::string connName = name_ + buf;
 
-    LOG_INFO("TcpServer::newConnection [%s] - new connection [%s] from %d", name_, connName, peerAddr.toIpPort());  
+    LOG_INFO("TcpServer::newConnection [%s] - new connection [%s] from %s", name_.c_str(), connName.c_str(), peerAddr.toIpPort().c_str());  
     
     NetAddress localAddr(sockets::getLocalAddr(sockfd));
     TcpConnectionPtr conn(new TcpConnection(ioLoop,
@@ -96,7 +97,7 @@ void TcpServer::removeConnection(const TcpConnectionPtr& conn)
 void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)
 {
     loop_->assertInLoopThread();
-    LOG_INFO("TcpServer::removeConnectionInLoop [%s] - connection %s", name_, conn->name());
+    LOG_INFO("TcpServer::removeConnectionInLoop [%s] - connection %s", name_.c_str(), conn->name().c_str());
     size_t n = connections_.erase(conn->name());
     (void)n;
     assert(n == 1);

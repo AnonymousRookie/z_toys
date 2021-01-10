@@ -11,6 +11,7 @@ Acceptor::Acceptor(EventLoop* loop, const NetAddress& listenAddr)
 {
     acceptSocket_.setReuseAddr(true);
     acceptSocket_.bind(listenAddr);
+    acceptChannel_.setReadCallback(std::bind(&Acceptor::handleRead, this));
 }
 
 Acceptor::~Acceptor()
@@ -29,6 +30,7 @@ void Acceptor::listen()
     loop_->assertInLoopThread();
     listening_ = true;
     acceptSocket_.listen();
+    acceptChannel_.enableReading();
 }
 
 bool Acceptor::listening()

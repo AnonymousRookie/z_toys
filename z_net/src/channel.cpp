@@ -6,8 +6,8 @@
 NAMESPACE_BEGIN(z_net)
 
 const int Channel::kNoneEvent = 0;
-const int Channel::kReadEvent = POLLIN | POLLPRI;
-const int Channel::kWriteEvent = POLLOUT;
+const int Channel::kReadEvent = POLLIN | POLLPRI;  // 1 | 2 = 3
+const int Channel::kWriteEvent = POLLOUT;          // 4
 
 Channel::Channel(EventLoop* loop, int fd)
     : loop_(loop)
@@ -90,7 +90,7 @@ int Channel::fd()
 void Channel::handleEventWithGuard(Timestamp receiveTime)
 {
     eventHandling_ = true;
-    LOG_INFO("%s", reventsToString());
+    LOG_INFO("revents = %s", reventsToString().c_str());
 
     if ((revents_ & POLLHUP) && !(revents_ & POLLIN))
     {

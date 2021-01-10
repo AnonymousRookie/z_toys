@@ -1,4 +1,5 @@
 #include <string>
+#include <signal.h>
 #include "../src/tcp_client.h"
 #include "../src/event_loop.h"
 #include "../src/net_address.h"
@@ -41,17 +42,19 @@ private:
 private:
     z_net::EventLoop* loop_;
     z_net::TcpClient client_;
-    std::string message_;
+    std::string message_ = "hi";
 };
 
 int main(int argc, char* argv[])
 {
+    signal(SIGPIPE, SIG_IGN);
+
     Logger::getInstance().setFileBaseName("echo_client");
     Logger::getInstance().setRollSize(100 * 1024 * 1024);  // 100M
     Logger::getInstance().start();
 
     z_net::EventLoop loop;
-    z_net::NetAddress serverAddr("127.0.0.1", 8002);
+    z_net::NetAddress serverAddr("127.0.0.1", 8001);
 
     EchoClient client(&loop, serverAddr);
     client.connect();

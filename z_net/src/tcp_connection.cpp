@@ -224,6 +224,7 @@ void TcpConnection::connectEstablished()
     assert(state_ == kConnecting);
     setState(kConnected);
     channel_->tie(shared_from_this());
+    channel_->enableReading();
 
     connectionCallback_(shared_from_this());
 }

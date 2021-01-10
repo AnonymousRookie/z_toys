@@ -51,5 +51,9 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "-std=c++11 -pthread")
 endif()
 
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 add_executable(echo_client ${HEADERS} ${SOURCES} tests/echo_client.cpp)
 add_executable(echo_server ${HEADERS} ${SOURCES} tests/echo_server.cpp)

@@ -1,4 +1,5 @@
 #include <string>
+#include <signal.h>
 #include "../src/tcp_server.h"
 #include "../src/event_loop.h"
 #include "../src/net_address.h"
@@ -14,7 +15,7 @@ public:
     {
         server_.setConnectionCallback(std::bind(&EchoServer::onConnection, this, std::placeholders::_1));
         server_.setMessageCallback(std::bind(&EchoServer::onMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
-        server_.setThreadNum(10);
+        server_.setThreadNum(2);
     }
 
     void start()
@@ -41,6 +42,8 @@ private:
 
 int main(int argc, char* argv[])
 {
+    signal(SIGPIPE, SIG_IGN);
+
     Logger::getInstance().setFileBaseName("echo_server");
     Logger::getInstance().setRollSize(100 * 1024 * 1024);  // 100M
     Logger::getInstance().start();

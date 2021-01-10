@@ -36,13 +36,28 @@ void Connector::reStart()
 
 void Connector::stop()
 {
-    connect_ = true;
+    connect_ = false;
     loop_->runInLoop(std::bind(&Connector::stopInLoop, this));
 }
 
 void Connector::setState(States state)
 {
     state_ = state;
+}
+
+const char* Connector::getState(States state)
+{
+    switch (state)
+    {
+    case kDisconnected:
+        return "kDisconnected";
+    case kConnecting:
+        return "kConnecting";
+    case kConnected:
+        return "kConnected";
+    default:
+        return "unexpected state";
+    }
 }
 
 void Connector::startInLoop()
@@ -135,19 +150,22 @@ void Connector::handleWrite()
 
 void Connector::handleError()
 {
-    LOG_ERROR("Connector::handleError state=%d", state_);
+    LOG_ERROR("Connector::handleError state=%s", getState(state_));
     if (state_ == kConnecting)
     {
         int sockfd = removeAndResetChannel();
         int err = sockets::getSocketError(sockfd);
-        LOG_INFO("SO_ERROR = %d", err);
+        LOG_INFO("sockfd = %d, err = %d, error info = %s", sockfd, err, strerror(err));
         retry(sockfd);
     }
 }
 
 void Connector::retry(int sockfd)
 {
+    sockets::close(sockfd);
+    setState(kDisconnected);
 
+    // fixme: 定时重试
 }
 
 int Connector::removeAndResetChannel()
