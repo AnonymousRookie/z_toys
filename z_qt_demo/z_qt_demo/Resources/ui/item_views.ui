@@ -6,20 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1318</width>
+    <height>765</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListView" name="listView">
+  <widget class="QListView" name="listView_studentInfo">
    <property name="geometry">
     <rect>
      <x>30</x>
      <y>20</y>
-     <width>256</width>
-     <height>192</height>
+     <width>181</width>
+     <height>401</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>881</width>
+     <height>271</height>
     </rect>
    </property>
   </widget>

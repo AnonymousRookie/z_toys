@@ -296,6 +296,25 @@ QHeaderView::section {
     padding-left:0px;
 }
 
+/**************************** QListView ****************************/
+QListView {
+    background:#012447;
+    border:none;
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    color:#FFFFFF;
+}
+
+QListView::item {
+    border-bottom:1px solid #012D5B;
+}
+
+QListView::item::selected {
+    color:#FFFFFF;
+    background:#0B6FAB;
+    border-bottom:1px solid #012D5B;
+}
+
 /**************************** QTableView ****************************/
 QTableView {
     background:#012447;
