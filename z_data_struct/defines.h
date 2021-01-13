@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <assert.h>
 
+typedef size_t size_type;
+
 #define Z_CHECK(p) if (!(p)) return;
 #define Z_CHECK_RETURN(p, r) if (!(p)) return r;
 #define Z_CHECK_CONTINUE(p) if (!(p)) continue;

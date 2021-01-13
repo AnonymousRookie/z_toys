@@ -5,6 +5,7 @@ project(z_data_struct)
 set(HEADERS
     defines.h
     z_vector.h
+    z_list.h
 )
 
 set(SOURCES
