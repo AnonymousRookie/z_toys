@@ -9,10 +9,10 @@ template <class T>
 class Vector
 {
 public:
-    Vector(uint32_t capacity = kDefaultCapacity, uint32_t size = 0, T elem = 0);
+    Vector(size_type capacity = kDefaultCapacity, size_type size = 0, T elem = 0);
     ~Vector();
 
-    uint32_t size() const {
+    size_type size() const {
         return size_;
     }
 
@@ -20,25 +20,34 @@ public:
         return !size_;
     }
 
-    T& operator[](uint32_t index) const;
+    T& operator[](size_type index) const;
     void insert(const T& elem);
-    void remove(uint32_t index);
+    void remove(size_type index);
+    void push_back(const T& elem);
+    void pop_back();
+    
+    T& front() {
+        return element_[0];
+    }
+    T& back() {
+        return element_[size_ - 1];
+    }
 
 private:
     void expand();  // 空间不足时扩容
     void shrink();  // 装填因子过小时压缩
-    void insert(uint32_t index, const T& elem);
-    void remove(uint32_t left, uint32_t right);  // 删除区间[left, right)
+    void insert(size_type index, const T& elem);
+    void remove(size_type left, size_type right);  // 删除区间[left, right)
 
 private:
     const static uint32_t kDefaultCapacity = 4;
     T* element_;
-    uint32_t capacity_;
-    uint32_t size_;
+    size_type capacity_;
+    size_type size_;
 };
 
 template <class T>
-Vector<T>::Vector(uint32_t capacity/* = kDefaultCapacity*/, uint32_t size/* = 0*/, T elem/* = 0*/)
+Vector<T>::Vector(size_type capacity/* = kDefaultCapacity*/, size_type size/* = 0*/, T elem/* = 0*/)
     : capacity_(capacity)
     , size_(size)
 {
@@ -64,7 +73,7 @@ Vector<T>::~Vector()
 }
 
 template <class T>
-T& Vector<T>::operator[](uint32_t index) const
+T& Vector<T>::operator[](size_type index) const
 {
     return element_[index];
 }
@@ -73,6 +82,18 @@ template <class T>
 void Vector<T>::insert(const T& elem)
 {
     insert(size_, elem);
+}
+
+template <class T>
+void Vector<T>::push_back(const T& elem)
+{
+    insert(size_, elem);
+}
+
+template <class T>
+void Vector<T>::pop_back()
+{
+    remove(size_ - 1);
 }
 
 template <class T>
@@ -125,7 +146,7 @@ void Vector<T>::shrink()
 }
 
 template <class T>
-void Vector<T>::insert(uint32_t index, const T& elem)
+void Vector<T>::insert(size_type index, const T& elem)
 {
     if (index > size_) {
         return;
@@ -141,13 +162,13 @@ void Vector<T>::insert(uint32_t index, const T& elem)
 }
 
 template <class T>
-void Vector<T>::remove(uint32_t index)
+void Vector<T>::remove(size_type index)
 {
     remove(index, index + 1);
 }
 
 template <class T>
-void Vector<T>::remove(uint32_t left, uint32_t right)
+void Vector<T>::remove(size_type left, size_type right)
 {
     if (left >= right || right > size_) {
         return;

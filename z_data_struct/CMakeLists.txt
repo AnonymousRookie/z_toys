@@ -6,6 +6,9 @@ set(HEADERS
     defines.h
     z_vector.h
     z_list.h
+    z_stack.h
+    z_deque.h
+    z_queue.h
 )
 
 set(SOURCES

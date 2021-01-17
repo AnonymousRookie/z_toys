@@ -1,12 +1,15 @@
 #include <iostream>
 #include "z_vector.h"
 #include "z_list.h"
+#include "z_stack.h"
+#include "z_deque.h"
+#include "z_queue.h"
 
 void testVector()
 {
     z::Vector<int> v1;
     for (int i = 0; i < 10; ++i) {
-        v1.insert(i);
+        v1.push_back(i);
     }
     assert(v1.size() == 10);
 
@@ -17,9 +20,20 @@ void testVector()
     printf("\n");
 
     while (!v1.empty()) {
-        v1.remove(0);
+        v1.pop_back();
     }
     assert(v1.size() == 0);
+
+    for (int i = 0; i < 10; ++i) {
+        v1.push_back(i);
+    }
+    printf("v1.front() = %d\n", v1.front());
+    printf("v1.back() = %d\n", v1.back());
+
+    v1.front() = 111;
+    v1.back() = 222;
+    printf("v1.front() = %d\n", v1.front());
+    printf("v1.back() = %d\n", v1.back());
 }
 
 void testList()
@@ -55,13 +69,68 @@ void testList()
     printf("\n");
 }
 
+void testStack()
+{
+    z::Stack<int> s1;
+    for (int i = 0; i < 10; ++i) {
+        s1.push(i);
+    }
+    while (!s1.empty()) {
+        printf("%d ", s1.top());
+        s1.pop();
+    }
+    assert(s1.size() == 0);
+}
+
+void testDeque()
+{
+    z::Deque<int> dq1;
+    dq1.push_back(1);
+    dq1.push_back(2);
+    dq1.push_front(3);
+    dq1.push_front(4);
+
+    assert(dq1.front() == 4);
+    assert(dq1.back() == 2);
+
+    dq1.pop_back();
+    assert(dq1.front() == 4);
+    assert(dq1.back() == 1);
+
+    dq1.pop_front();
+    assert(dq1.front() == 3);
+    assert(dq1.back() == 1);
+}
+
+void testQueue()
+{
+    z::Queue<int> q1;
+    q1.push(1);
+    q1.push(2);
+    q1.push(3);
+    assert(q1.size() == 3);
+    assert(q1.top() == 1);
+
+    q1.pop();
+    assert(q1.top() == 2);
+}
+
 int main()
 {
-    printf("\n-----------------------------\n");
+    printf("\n-------------testVector----------------\n");
     testVector();
 
-    printf("\n-----------------------------\n");
+    printf("\n-------------testList----------------\n");
     testList();
+
+    printf("\n-------------testStack----------------\n");
+    testStack();
+
+    printf("\n-------------testDeque----------------\n");
+    testDeque();
+
+    printf("\n-------------testQueue----------------\n");
+    testQueue();
 
     return 0;
 }
