@@ -33,6 +33,8 @@ public:
         return element_[size_ - 1];
     }
 
+    void clear();
+
 private:
     void expand();  // 空间不足时扩容
     void shrink();  // 装填因子过小时压缩
@@ -179,6 +181,13 @@ void Vector<T>::remove(size_type left, size_type right)
     }
 
     size_ -= (right - left);
+    shrink();
+}
+
+template <class T>
+void Vector<T>::clear()
+{
+    size_ = 0;
     shrink();
 }
 

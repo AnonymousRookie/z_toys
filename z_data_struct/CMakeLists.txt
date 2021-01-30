@@ -9,6 +9,7 @@ set(HEADERS
     z_stack.h
     z_deque.h
     z_queue.h
+    z_binary_tree.h
 )
 
 set(SOURCES

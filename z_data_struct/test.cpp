@@ -4,6 +4,15 @@
 #include "z_stack.h"
 #include "z_deque.h"
 #include "z_queue.h"
+#include "z_binary_tree.h"
+
+void printVector(const z::Vector<int>& vec)
+{
+    for (int i = 0; i < vec.size(); ++i) {
+        printf("%d ", vec[i]);
+    }
+    printf("\n");
+}
 
 void testVector()
 {
@@ -115,6 +124,60 @@ void testQueue()
     assert(q1.top() == 2);
 }
 
+void testBinaryTree()
+{
+    /*
+         1
+        / \
+       2   3
+        \
+         4
+    */
+
+    z::BinaryTree<int> bt;
+    z::BTNode<int>* root = bt.insertAsRoot(1);
+    z::BTNode<int>* lchild1 = bt.insertAsLeftChild(root, 2);
+    z::BTNode<int>* rchild1 = bt.insertAsRightChild(root, 3);
+    z::BTNode<int>* rchild2 = bt.insertAsRightChild(lchild1, 4);
+
+    z::Vector<int> vals;
+
+    vals.clear();
+    bt.preorderRecursiveTraversal(root, vals);
+    printf("preorderRecursiveTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.preorderIterativeTraversal(root, vals);
+    printf("preorderIterativeTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.inorderRecursiveTraversal(root, vals);
+    printf("inorderRecursiveTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.inorderIterativeTraversal(root, vals);
+    printf("inorderIterativeTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.postorderRecursiveTraversal(root, vals);
+    printf("postorderRecursiveTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.postorderIterativeTraversal(root, vals);
+    printf("postorderIterativeTraversal: ");
+    printVector(vals);
+
+    vals.clear();
+    bt.levelTraversal(root, vals);
+    printf("levelTraversal: ");
+    printVector(vals);
+}
+
 int main()
 {
     printf("\n-------------testVector----------------\n");
@@ -131,6 +194,9 @@ int main()
 
     printf("\n-------------testQueue----------------\n");
     testQueue();
+
+    printf("\n-------------testBinaryTree----------------\n");
+    testBinaryTree();
 
     return 0;
 }
