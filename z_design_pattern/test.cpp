@@ -7,17 +7,17 @@ void testObserver()
 {
     Subject* subject = new Subject;
 
-    Observer* o1 = new Observer("o1", subject);
-    subject->addObserver(o1);
+    Observer* o1 = new Observer("o1");
+    o1->observe(subject);
 
-    Observer* o2 = new Observer("o2", subject);
-    subject->addObserver(o2);
+    Observer* o2 = new Observer("o2");
+    o2->observe(subject);
 
     subject->notifyObservers();
 
-    subject->clear();
+    delete o1;
+    delete o2;
     delete subject;
-    subject = nullptr;
 }
 
 int main()

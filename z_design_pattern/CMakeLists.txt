@@ -8,6 +8,7 @@ set(HEADERS
 
 set(SOURCES
     test.cpp
+    z_observer.cpp
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
