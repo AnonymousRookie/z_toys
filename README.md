@@ -2,6 +2,8 @@
 
 ## z_data_struct: 基本数据结构实现
 
+## z_design_pattern: 常用设计模式实现
+
 ## z_http_server: 简单的Http服务器
 
 ## z_log: 简单的日志记录模块
