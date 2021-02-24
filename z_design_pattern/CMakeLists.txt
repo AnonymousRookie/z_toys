@@ -3,12 +3,15 @@ cmake_minimum_required(VERSION 3.10.1)
 project(z_design_pattern)
 
 set(HEADERS
+    defines.h
     z_observer.h
+    z_singleton.h
 )
 
 set(SOURCES
     test.cpp
     z_observer.cpp
+    z_singleton.cpp
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
