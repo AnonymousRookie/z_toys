@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <mutex>
 #include "defines.h"
 
 NAMESPACE_BEGIN(z)
@@ -35,6 +36,19 @@ private:
     static Singleton_Hungry* instance_;
 };
 
+// 懒汉式(线程安全)
+static std::mutex mutex_;
+class Singleton_Lazy_ThreadSafe
+{
+private:
+    Singleton_Lazy_ThreadSafe();
+
+public:
+    static Singleton_Lazy_ThreadSafe* instance();
+
+private:
+    static Singleton_Lazy_ThreadSafe* instance_;
+};
 
 NAMESPACE_END(z)
 
