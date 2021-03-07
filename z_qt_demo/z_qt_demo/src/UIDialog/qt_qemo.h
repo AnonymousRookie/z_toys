@@ -14,6 +14,7 @@ class DisplayWidgetsWidget;
 class InputWidgetsWidget;
 class ItemViewsWidget;
 class ItemWidgetsWidget;
+class EventsWidget;
 
 class QtDemo : public QWidget
 {
@@ -51,5 +52,6 @@ private:
     std::unique_ptr<InputWidgetsWidget> m_inputWidgetsWidget = nullptr;
     std::unique_ptr<ItemViewsWidget> m_itemViewsWidget = nullptr;
     std::unique_ptr<ItemWidgetsWidget> m_itemWidgetsWidget = nullptr;
+    std::unique_ptr<EventsWidget> m_eventsWidget = nullptr;
 };
 

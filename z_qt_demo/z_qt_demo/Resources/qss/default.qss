@@ -22,10 +22,6 @@ QWidget[type="PopUpWidget"] {
     background-color:#012C6A;
 }
 
-QWidget#HistoryDataReplayToolBarWidget {
-    background-color:#012C6A;
-}
-
 /**************************** QLineEdit ****************************/
 QLineEdit {
     background-color:#012D5B;
@@ -92,34 +88,16 @@ QLabel#PhoneLabel {
     font-size: 16px;
 }
 
-QLabel[parent="AlarmDiagnosisWidget"] {
+QLabel[parent="EventsWidget"] {
     color: white;
     font-family: "Microsoft YaHei";
-    font-size: 14px;
-}
-
-QLabel[parent="InfoQueryWidget"] {
-    color: white;
-    font-family: "Microsoft YaHei";
-    font-size: 14px;
+    font-size: 16px;
 }
 
 QLabel[parent="ImageButton"] {
     color: white;
     font-family: "Microsoft YaHei";
     font-size: 10px;
-}
-
-QLabel[parent="HistoryDataReplayTimeSettingWidget"] {
-    color: white;
-    font-family: "Microsoft YaHei";
-    font-size: 14px;
-}
-
-QLabel[parent="Dpdu3Widget"] {
-    color: white;
-    font-family: "Microsoft YaHei";
-    font-size: 14px;
 }
 
 QLabel#PreAlarmNum {

@@ -121,6 +121,7 @@
     <ClCompile Include="src\UIDialog\body_widget.cpp" />
     <ClCompile Include="src\UIDialog\buttons_widget.cpp" />
     <ClCompile Include="src\UIDialog\display_widgets_widget.cpp" />
+    <ClCompile Include="src\UIDialog\events_widget.cpp" />
     <ClCompile Include="src\UIDialog\input_widgets_widget.cpp" />
     <ClCompile Include="src\UIDialog\item_views_widget.cpp" />
     <ClCompile Include="src\UIDialog\item_widgets_widget.cpp" />
@@ -137,6 +138,7 @@
     <QtMoc Include="src\UIDialog\basedwidget\image_button.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\UIDialog\events_widget.h" />
     <QtMoc Include="src\UIDialog\item_widgets_widget.h" />
     <QtMoc Include="src\UIDialog\item_views_widget.h" />
     <QtMoc Include="src\UIDialog\input_widgets_widget.h" />
@@ -155,6 +157,7 @@
   <ItemGroup>
     <QtUic Include="Resources\ui\buttons.ui" />
     <QtUic Include="Resources\ui\display_widgets.ui" />
+    <QtUic Include="Resources\ui\events_widget.ui" />
     <QtUic Include="Resources\ui\input_widgets.ui" />
     <QtUic Include="Resources\ui\item_views.ui" />
     <QtUic Include="Resources\ui\item_widgets.ui" />

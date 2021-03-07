@@ -8,7 +8,7 @@
 #include "input_widgets_widget.h"
 #include "item_views_widget.h"
 #include "item_widgets_widget.h"
-
+#include "events_widget.h"
 
 QtDemo::QtDemo(QWidget *parent)
     : QWidget(parent)
@@ -54,6 +54,7 @@ void QtDemo::initUi()
     m_inputWidgetsWidget = std::make_unique<InputWidgetsWidget>(m_bodyWidget);
     m_itemViewsWidget = std::make_unique<ItemViewsWidget>(m_bodyWidget);
     m_itemWidgetsWidget = std::make_unique<ItemWidgetsWidget>(m_bodyWidget);
+    m_eventsWidget = std::make_unique<EventsWidget>(m_bodyWidget);
 }
 
 void QtDemo::initConnect()
@@ -106,6 +107,9 @@ void QtDemo::onMenuBtnClicked(int btnId)
     case FunctionType_InputWidgets:
         m_inputWidgetsWidget->show();
         break;
+    case FunctionType_Events:
+        m_eventsWidget->show();
+        break;
     default:
         break;
     }
@@ -137,6 +141,9 @@ void QtDemo::hideOtherWidget(int showId)
             break;
         case FunctionType_InputWidgets:
             m_inputWidgetsWidget->hide();
+            break;
+        case FunctionType_Events:
+            m_eventsWidget->hide();
             break;
         default:
             break;

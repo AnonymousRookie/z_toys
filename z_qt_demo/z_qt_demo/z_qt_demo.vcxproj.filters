@@ -72,6 +72,9 @@
     <ClCompile Include="src\UIDialog\item_widgets_widget.cpp">
       <Filter>src\UIDialog</Filter>
     </ClCompile>
+    <ClCompile Include="src\UIDialog\events_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\UIDialog\top_widget.h">
@@ -111,6 +114,9 @@
       <Filter>src\UIDialog</Filter>
     </QtMoc>
     <QtMoc Include="src\UIDialog\item_widgets_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\events_widget.h">
       <Filter>src\UIDialog</Filter>
     </QtMoc>
   </ItemGroup>
@@ -164,6 +170,9 @@
       <Filter>Resources\ui</Filter>
     </QtUic>
     <QtUic Include="Resources\ui\item_widgets.ui">
+      <Filter>Resources\ui</Filter>
+    </QtUic>
+    <QtUic Include="Resources\ui\events_widget.ui">
       <Filter>Resources\ui</Filter>
     </QtUic>
   </ItemGroup>

@@ -22,8 +22,10 @@ enum FunctionType
     FunctionType_ItemWidgets = 1002,    // Item Widgets
     FunctionType_InputWidgets = 1003,   // Input Widgets
     FunctionType_DisplayWidgets = 1004, // Display Widgets
-    FunctionType_Others1 = 1005,
+    FunctionType_Events = 1005,
     FunctionType_Others2 = 1006,
     FunctionType_Others3 = 1007,
 };
 
+#define DEFAULE_SCREEN_WIDTH 1366
+#define DEFAULE_SCREEN_HEIGHT 768

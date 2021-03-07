@@ -111,7 +111,7 @@ void TopWidget::initMenuBar()
         { FunctionBtnInfo(3, 1002, "ItemWidgets") },
         { FunctionBtnInfo(4, 1003, "InputWidgets") },
         { FunctionBtnInfo(5, 1004, "DisplayWidgets") },
-        { FunctionBtnInfo(6, 1005, "Others") },
+        { FunctionBtnInfo(6, 1005, "Events") },
         { FunctionBtnInfo(7, 1006, "Others") },
         { FunctionBtnInfo(8, 1007, "Others") }
     };
