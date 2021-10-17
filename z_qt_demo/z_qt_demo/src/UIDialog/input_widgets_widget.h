@@ -1,4 +1,12 @@
-﻿#pragma once
+﻿/*
+Item Widgets(Item-Based):
+
+- List Widget
+- Tree Widget
+- Table Widget
+*/
+
+#pragma once
 
 #include <map>
 #include <string>

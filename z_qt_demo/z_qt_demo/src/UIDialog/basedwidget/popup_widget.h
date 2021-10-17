@@ -7,7 +7,6 @@
 #include <map>
 #include <string>
 #include <memory>
-#include <QProcess>
 #include <QLabel>
 #include <QPushButton>
 #include <QtWidgets/QMainWindow>
@@ -19,14 +18,20 @@ class PopupWidgetTitle : public BasedStyleShetWidget
     Q_OBJECT
 
 public:
-    explicit PopupWidgetTitle(QWidget *parent = 0);
+    explicit PopupWidgetTitle(const QString& title, QWidget *parent = 0);
     ~PopupWidgetTitle();
+
+    void updateTitle(const QString& title);
 
 signals:
     void closeClicked();
 
 private:
     void initUi();
+
+private:
+    QString m_title;
+    QLabel* m_titleLabel;
 };
 
 class PopupWidget : public BasedWidget
@@ -34,7 +39,7 @@ class PopupWidget : public BasedWidget
     Q_OBJECT
 
 public:
-    explicit PopupWidget(QWidget *parent = 0);
+    explicit PopupWidget(const QString& title/* = ""*/, QWidget *parent = 0);
     ~PopupWidget();
 
 signals:
@@ -54,9 +59,14 @@ public:
     void setLabel(const QString& content);
     void setTitleWidgetWidth(int width);
     void setTitleWidgetHeight(int height);
+    void updateTitle(const QString& title);
 
 private:
     std::shared_ptr<PopupWidgetTitle> m_spTitleWidget;
+    QString m_title;
+
+public:
+    bool m_show = false;
 };
 
 #endif // POPUP_WIDGET_H

@@ -13,6 +13,7 @@ class QLabel;
 class QMenu;
 class PreAlarmBtn;
 class PreAlarmWidget;
+class TipsWidget;
 
 struct FunctionBtnInfo
 {
@@ -57,6 +58,8 @@ private:
     std::shared_ptr<QTimer> m_Timer;
     std::shared_ptr<PreAlarmBtn> m_preAlarmBtn;
     std::map<int, std::shared_ptr<ImageButton>> m_mainFunctionBtnMap;
+
+    std::shared_ptr<TipsWidget> m_spTipsWidget = nullptr;
 };
 
 class PreAlarmBtn : public QWidget

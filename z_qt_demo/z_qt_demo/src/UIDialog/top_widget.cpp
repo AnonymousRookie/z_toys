@@ -10,6 +10,7 @@
 #include <QDateTime>
 #include <QMouseEvent>
 #include "top_widget.h"
+#include "tips_widget.h"
 #include "defines.h"
 #include "basedwidget/image_button.h"
 #include "../string_util.h"
@@ -47,6 +48,8 @@ void TopWidget::initUi()
     initTitle();
     initMenuBar();
 
+    m_spTipsWidget = std::make_shared<TipsWidget>(510, 318, tr("提示信息"));
+    m_spTipsWidget->hide();
 }
 
 void TopWidget::initTitle()
@@ -158,6 +161,7 @@ void TopWidget::onTimeOut()
 
 void TopWidget::onPreAlarmBtnClicked()
 {
+    m_spTipsWidget->showTips("hello");
 }
 
 void TopWidget::setCurrentTimeToLabel()

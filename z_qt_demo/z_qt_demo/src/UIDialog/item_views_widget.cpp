@@ -49,6 +49,9 @@ void ItemViewsWidget::initUi()
     move(0, TITLE_HEIGHT);
 
     initStudentInfoListView();
+
+    tableViewModel_ = new QStandardItemModel(this);
+    initTableView();
 }
 
 void ItemViewsWidget::initConnect()
@@ -60,6 +63,7 @@ void ItemViewsWidget::initStudentInfoListView()
 {
     studentInfoListViewModel_ = new QStandardItemModel(this);
     ui_.listView_studentInfo->setModel(studentInfoListViewModel_);
+    setListViewStyle(ui_.listView_studentInfo);
 
     studentInfos_.push_back(new StudentInfo("Jason", 11));
     studentInfos_.push_back(new StudentInfo("Peter", 22));
@@ -73,6 +77,52 @@ void ItemViewsWidget::initStudentInfoListView()
         item->setData(itemData);
         studentInfoListViewModel_->insertRow(index++, item);
     }
+}
+
+void ItemViewsWidget::initTableView()
+{
+    tableViewModel_->clear();
+    enum { INFO_COL_NUMBER = 7 };
+    tableViewModel_->setColumnCount(INFO_COL_NUMBER);
+
+    tableViewModel_->setHeaderData(0, Qt::Horizontal, tr("序号"));
+    tableViewModel_->setHeaderData(1, Qt::Horizontal, tr("时间"));
+    tableViewModel_->setHeaderData(2, Qt::Horizontal, tr("来源"));
+    tableViewModel_->setHeaderData(3, Qt::Horizontal, tr("信息名称/内容"));
+    tableViewModel_->setHeaderData(4, Qt::Horizontal, tr("状态"));
+    tableViewModel_->setHeaderData(5, Qt::Horizontal, tr("类型"));
+    tableViewModel_->setHeaderData(6, Qt::Horizontal, tr("子类型"));
+    ui_.tableView->setModel(tableViewModel_);
+
+    ui_.tableView->horizontalHeader()->resizeSection(0, 60);
+    ui_.tableView->horizontalHeader()->resizeSection(1, 100);
+    ui_.tableView->horizontalHeader()->resizeSection(2, 100);
+    ui_.tableView->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
+    ui_.tableView->horizontalHeader()->resizeSection(4, 100);
+    ui_.tableView->horizontalHeader()->resizeSection(5, 100);
+    ui_.tableView->horizontalHeader()->resizeSection(6, 100);
+
+    // 内容较多时多行显示
+    ui_.tableView->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+    setTableViewStyle(ui_.tableView);
+
+
+    auto index = 1;
+    int rowIndex = 0;
+    QList<QStandardItem*> valList;
+    valList << new QStandardItem(QString("%1").arg(index++))
+        << new QStandardItem("a")
+        << new QStandardItem("b")
+        << new QStandardItem("QStandardItem, QStandardItem, QStandardItem, QStandardItem")
+        << new QStandardItem("c")
+        << new QStandardItem("d")
+        << new QStandardItem("e");
+
+    for (auto item : valList) {
+        item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    }
+    tableViewModel_->insertRow(rowIndex++, valList);
 }
 
 void ItemViewsWidget::onStudentInfoListViewClicked(const QModelIndex& index)

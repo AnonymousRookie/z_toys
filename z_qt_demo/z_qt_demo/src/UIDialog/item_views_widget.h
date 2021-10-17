@@ -1,4 +1,13 @@
-﻿#pragma once
+﻿/*
+    Item Views(Model-Based):
+
+    - List View
+    - Tree View
+    - Table View
+    - Column View
+*/
+
+#pragma once
 
 #include <map>
 #include <string>
@@ -40,8 +49,12 @@ private:
 
     void initStudentInfoListView();
 
+    void initTableView();
+
 private:
     Ui::ItemViews ui_;
     QStandardItemModel* studentInfoListViewModel_ = nullptr;
     std::vector<StudentInfo*> studentInfos_;
+
+    QStandardItemModel* tableViewModel_ = nullptr;
 };

@@ -4,8 +4,9 @@
 #include "popup_widget.h"
 #include "image_button.h"
 
-PopupWidgetTitle::PopupWidgetTitle(QWidget *parent)
+PopupWidgetTitle::PopupWidgetTitle(const QString& title, QWidget *parent)
     : BasedStyleShetWidget(parent)
+    , m_title(title)
 {
     setAttribute(Qt::WA_TranslucentBackground);
     setObjectName("PopupWidgetTitle");
@@ -14,18 +15,28 @@ PopupWidgetTitle::PopupWidgetTitle(QWidget *parent)
 
 PopupWidgetTitle::~PopupWidgetTitle()
 {
+    if (m_titleLabel)
+    {
+        delete m_titleLabel;
+        m_titleLabel = nullptr;
+    }
+}
 
+void PopupWidgetTitle::updateTitle(const QString& title)
+{
+    m_title = title;
+    m_titleLabel->setText(title);
 }
 
 void PopupWidgetTitle::initUi()
 {
-    QLabel *titleLabel = new QLabel("");
-    titleLabel->setObjectName("TitleLabel");
+    m_titleLabel = new QLabel(m_title);
+    m_titleLabel->setObjectName("PopupWidgetTitle");
 
     QWidget *titleWidget = new QWidget(this);
     QHBoxLayout *titleLayout = new QHBoxLayout(titleWidget);
-    titleLayout->addWidget(titleLabel, 0, Qt::AlignVCenter);
-    titleLayout->setContentsMargins(6, 6, 6, 6);
+    titleLayout->addWidget(m_titleLabel, 0, Qt::AlignVCenter);
+    titleLayout->setContentsMargins(10, 10, 10, 10);
 
     ImageButton *closeButton = new ImageButton(":/qt_demo/close");
     closeButton->setCursorEnable(true);
@@ -43,8 +54,9 @@ void PopupWidgetTitle::initUi()
     mainLayout->setContentsMargins(5, 5, 5, 5);
 }
 
-PopupWidget::PopupWidget(QWidget *parent)
+PopupWidget::PopupWidget(const QString& title/* = ""*/, QWidget *parent/* = 0*/)
     : BasedWidget(parent)
+    , m_title(title)
 {
     // 窗口最前显示
     setWindowFlags(Qt::Widget 
@@ -63,6 +75,7 @@ PopupWidget::~PopupWidget()
 
 void PopupWidget::onCloseBtnClicked()
 {
+    m_show = false;
     close();
 }
 
@@ -74,7 +87,7 @@ void PopupWidget::closeEvent(QCloseEvent*)
 void PopupWidget::initUi()
 {
     // 标题widget
-    m_spTitleWidget = std::make_shared<PopupWidgetTitle>(this);
+    m_spTitleWidget = std::make_shared<PopupWidgetTitle>(m_title, this);
     m_spTitleWidget->show();
     m_spTitleWidget->move(0, 0);
 }
@@ -97,4 +110,10 @@ void PopupWidget::setTitleWidgetWidth(int width)
 void PopupWidget::setTitleWidgetHeight(int height)
 {
     m_spTitleWidget->setFixedHeight(height);
+}
+
+void PopupWidget::updateTitle(const QString& title)
+{
+    m_title = title;
+    m_spTitleWidget->updateTitle(title);
 }

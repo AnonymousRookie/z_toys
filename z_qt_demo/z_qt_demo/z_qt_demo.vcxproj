@@ -126,6 +126,7 @@
     <ClCompile Include="src\UIDialog\item_views_widget.cpp" />
     <ClCompile Include="src\UIDialog\item_widgets_widget.cpp" />
     <ClCompile Include="src\UIDialog\qt_qemo.cpp" />
+    <ClCompile Include="src\UIDialog\tips_widget.cpp" />
     <ClCompile Include="src\UIDialog\top_widget.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,7 @@
     <QtMoc Include="src\UIDialog\basedwidget\image_button.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="src\UIDialog\tips_widget.h" />
     <QtMoc Include="src\UIDialog\events_widget.h" />
     <QtMoc Include="src\UIDialog\item_widgets_widget.h" />
     <QtMoc Include="src\UIDialog\item_views_widget.h" />

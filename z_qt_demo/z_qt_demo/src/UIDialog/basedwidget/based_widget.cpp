@@ -16,6 +16,7 @@ BasedWidget::~BasedWidget()
 void BasedWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() != Qt::LeftButton) {
+        m_isPressed = false;
         e->ignore();
     } else {
         m_isPressed = true;

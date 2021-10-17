@@ -75,6 +75,9 @@
     <ClCompile Include="src\UIDialog\events_widget.cpp">
       <Filter>src\UIDialog</Filter>
     </ClCompile>
+    <ClCompile Include="src\UIDialog\tips_widget.cpp">
+      <Filter>src\UIDialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\UIDialog\top_widget.h">
@@ -117,6 +120,9 @@
       <Filter>src\UIDialog</Filter>
     </QtMoc>
     <QtMoc Include="src\UIDialog\events_widget.h">
+      <Filter>src\UIDialog</Filter>
+    </QtMoc>
+    <QtMoc Include="src\UIDialog\tips_widget.h">
       <Filter>src\UIDialog</Filter>
     </QtMoc>
   </ItemGroup>

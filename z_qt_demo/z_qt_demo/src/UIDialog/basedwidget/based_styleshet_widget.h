@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QWidget>
+#include <QTableView>
+#include <QListView>
 
 class BasedStyleShetWidget : public QWidget
 {
@@ -9,6 +11,9 @@ class BasedStyleShetWidget : public QWidget
 public:
     explicit BasedStyleShetWidget(QWidget* parent = 0);
     ~BasedStyleShetWidget();
+
+    void setTableViewStyle(QTableView* tv);
+    void setListViewStyle(QListView* lv);
 
 protected:
     void paintEvent(QPaintEvent* e);

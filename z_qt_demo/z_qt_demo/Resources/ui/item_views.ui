@@ -28,8 +28,18 @@
     <rect>
      <x>30</x>
      <y>480</y>
-     <width>881</width>
+     <width>191</width>
      <height>271</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>20</y>
+     <width>971</width>
+     <height>721</height>
     </rect>
    </property>
   </widget>
