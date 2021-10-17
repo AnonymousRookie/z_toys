@@ -1,4 +1,9 @@
-﻿#pragma once
+﻿/*
+    图形绘制，响应鼠标点击、拖拽、滚动（选中、放大、缩小），
+    支持鼠标右击菜单（放大、缩小、还原）。
+*/
+
+#pragma once
 
 #include <map>
 #include <string>
@@ -8,6 +13,7 @@
 #include <QMouseEvent>
 #include <QWheelEvent>
 #include <QKeyEvent>
+#include <QMenu>
 #include "basedwidget/based_styleshet_widget.h"
 #include "ui_events_widget.h"
 
@@ -28,14 +34,20 @@ public:
 
 signals:
 
-public slots :
-
+public slots:
+    // 放大
+    void onEnlarge();
+    // 缩小
+    void onNarrow();
+    // 还原
+    void onRestore();
 
 private:
     void init();
     void initUi();
     void initConnect();
     void drawRectNode(QPainter& painter, const RectNode& node);
+    void initAction();
 
 private:
     void paintEvent(QPaintEvent *e);
@@ -63,4 +75,6 @@ private:
     QTransform transform_;
 
     RectNode rectNode_;
+
+    QMenu* menu_ = nullptr;
 };

@@ -435,5 +435,27 @@ QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal {
     border-radius:4px;
 }
 
-/**************************** XXX ****************************/
+/**************************** QMenu ****************************/
+QMenu {
+    background-color: #0F344E;
+    border-width:0px;
+    margin: 2px;
+}
 
+QMenu::item {
+    background-color: #0F344E;
+    padding: 2px 25px 2px 20px;
+    border-color:transparent;
+    color:#B7C0C2;
+}
+
+QMenu::item:selected {
+    border-width:1px;
+    border-color:gray;
+    background: #1B2D45;
+    color: white;
+}
+QMenu::separator {
+    height: 1px;
+    background: #1D99A9;
+}
