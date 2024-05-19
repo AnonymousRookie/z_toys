@@ -70,6 +70,9 @@ npm install js-cookie@2
 npm install sass-loader node-sass --save-dev
 npm install svg-sprite-loader@4 --save-dev
 npm install webpack@^5.0.0 --save-dev
+npm install nprogress
+npm install mockjs@1 --save-dev
+npm install echarts
 ```
 
 

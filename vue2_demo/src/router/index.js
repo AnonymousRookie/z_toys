@@ -5,17 +5,29 @@ Vue.use(Router)
 
 import Layout from '@/layout'
 
-
 /**
  * constantRoutes
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
 export const constantRoutes = [
-    {
-        path: '/login',
-        component: () => import('@/views/login/index')
-    },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index')
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Dashboard',
+        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
 
 ]
 
@@ -25,10 +37,8 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
-    
-
-    // 404 page must be placed at the end !!!
-    { path: '*', redirect: '/404', hidden: true }
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 
@@ -37,7 +47,7 @@ export const asyncRoutes = [
 
 
 const createRouter = () => new Router({
-    routes: constantRoutes
+  routes: constantRoutes
 })
 
 const router = createRouter()

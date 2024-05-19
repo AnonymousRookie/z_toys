@@ -48,6 +48,20 @@ module.exports = {
     port: port,
     // pnpm run serve时是否直接打开浏览器
     open: false,
+    // before: require('./mock/mock-server.js')
+    // webpack5
+    // onBeforeSetupMiddleware: require('./mock/mock-server.js')
+    setupMiddlewares: (middlewares, devServer) => {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined')
+      }
+      const mockMiddleware = require('./mock/mock-server.js')
+      mockMiddleware(devServer.app)
+
+      console.log('setupMiddlewares')
+
+      return middlewares
+    }
   },
 
   // 如果要新增/修改webpack的plugins或者rules，有2种方式：configureWebpack、chainWebpack

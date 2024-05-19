@@ -144,10 +144,13 @@
             this.loading = true
             this.$store.dispatch('user/login', this.loginForm)
               .then(() => {
+                console.log('handleLogin:', this.redirect)
+                console.log('handleLogin:', this.otherQueryotherQuery)
                 this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
                 this.loading = false
               })
               .catch(() => {
+                console.log('user login failed!')
                 this.loading = false
               })
           } else {
