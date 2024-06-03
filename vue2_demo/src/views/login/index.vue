@@ -144,8 +144,8 @@
             this.loading = true
             this.$store.dispatch('user/login', this.loginForm)
               .then(() => {
-                console.log('handleLogin:', this.redirect)
-                console.log('handleLogin:', this.otherQueryotherQuery)
+                console.log('handleLogin redirect:', this.redirect)
+                console.log('handleLogin otherQuery:', this.otherQuery)
                 this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
                 this.loading = false
               })
@@ -167,24 +167,6 @@
           return acc
         }, {})
       }
-      // afterQRScan() {
-      //   if (e.key === 'x-admin-oauth-code') {
-      //     const code = getQueryObject(e.newValue)
-      //     const codeMap = {
-      //       wechat: 'code',
-      //       tencent: 'code'
-      //     }
-      //     const type = codeMap[this.auth_type]
-      //     const codeName = code[type]
-      //     if (codeName) {
-      //       this.$store.dispatch('LoginByThirdparty', codeName).then(() => {
-      //         this.$router.push({ path: this.redirect || '/' })
-      //       })
-      //     } else {
-      //       alert('第三方登录失败')
-      //     }
-      //   }
-      // }
     }
   }
   </script>

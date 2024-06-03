@@ -66,7 +66,17 @@ module.exports = {
 
   // 如果要新增/修改webpack的plugins或者rules，有2种方式：configureWebpack、chainWebpack
   configureWebpack: {
-    
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: name,
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      },
+      fallback: {
+        path: false
+      }
+    }
   },
   chainWebpack(config) {
     // set svg-sprite-loader

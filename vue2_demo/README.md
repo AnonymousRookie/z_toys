@@ -34,6 +34,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 v16.20.0
 
+```sh
+node -v
+nvm use v16.20.0
+```
+
 ## package-lock和package.json
 
 package-lock就是锁定安装时的包版本号，需要上传到git上，以保证其他人在install时候，大家的依赖版本相同。
@@ -73,6 +78,9 @@ npm install webpack@^5.0.0 --save-dev
 npm install nprogress
 npm install mockjs@1 --save-dev
 npm install echarts
+npm install fuse.js
+npm install path-to-regexp
+npm install screenfull
 ```
 
 

@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard-container">
+    <!-- 动态组件，用于实现在指定位置上，动态加载不同的组件 -->
     <component :is="currentRole" />
   </div>
 </template>
