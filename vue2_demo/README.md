@@ -81,6 +81,40 @@ npm install echarts
 npm install fuse.js
 npm install path-to-regexp
 npm install screenfull
+npm install vue-count-to
+npm i path-browserify --save
+npm i normalize.css
 ```
 
+## 移除命令
+
+```sh
+npm uninstall xxx
+```
+
+
+
+## 学习笔记
+
+### import时加{}与不加的区别
+
+1.不加花括号
+
+导入整个模块对象。
+
+例如：
+```js
+import axios from 'axios'
+```
+会导入整个axios模块，可以通过axios.get()等方法来使用它。
+
+2.加上花括号
+
+只导入模块中的指定变量或函数。
+
+例如：
+```js
+import { get, post } from 'axios'
+```
+只导入了axios模块中的get和post方法，可以直接使用get()和post()调用。
 

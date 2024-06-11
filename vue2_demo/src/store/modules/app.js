@@ -23,6 +23,8 @@ const mutations = {
     Cookies.set('sidebarStatus', 0)
     state.sidebar.opened = false
     state.sidebar.withoutAnimation = withoutAnimation
+
+    console.log('CLOSE_SIDEBAR...')
   },
   TOGGLE_DEVICE: (state, device) => {
     state.device = device

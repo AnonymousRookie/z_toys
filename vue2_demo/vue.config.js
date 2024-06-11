@@ -74,7 +74,8 @@ module.exports = {
         '@': resolve('src')
       },
       fallback: {
-        path: false
+        // 解决path.resolve报错问题，npm i path-browserify --save，并添加如下语句
+        path: require.resolve("path-browserify")
       }
     }
   },

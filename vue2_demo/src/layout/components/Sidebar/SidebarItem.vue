@@ -51,7 +51,6 @@ export default {
     }
   },
   data() {
-    // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
     // TODO: refactor with render function
     this.onlyOneChild = null
     return {}
@@ -82,12 +81,18 @@ export default {
       return false
     },
     resolvePath(routePath) {
+      console.log('SidebarIyem.vue basePath:', this.basePath)
+      console.log('SidebarIyem.vue routePath:', routePath)
+
       if (isExternal(routePath)) {
         return routePath
       }
       if (isExternal(this.basePath)) {
         return this.basePath
       }
+
+      // 返回绝对路径
+      console.log('SidebarIyem.vue path.resolve(this.basePath, routePath):', path.resolve(this.basePath, routePath))
       return path.resolve(this.basePath, routePath)
     }
   }

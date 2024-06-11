@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import 'normalize.css/normalize.css' // a modern alternative to CSS resets
+
 import Element from 'element-ui'
 import './styles/element-variables.scss'
 
+import '@/styles/index.scss' // global css
 import store from './store'
 import router from './router'
 import Cookies from 'js-cookie'
