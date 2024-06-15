@@ -1,19 +1,14 @@
 import Vue from 'vue'
-import App from './App.vue'
-
 import 'normalize.css/normalize.css' // a modern alternative to CSS resets
-
 import Element from 'element-ui'
 import './styles/element-variables.scss'
-
 import '@/styles/index.scss' // global css
+import App from './App.vue'
 import store from './store'
 import router from './router'
 import Cookies from 'js-cookie'
-
 import './icons'
 import './permission' // permission control
-
 
 /**
  * If you don't want to use mock-server
@@ -36,6 +31,7 @@ Vue.use(Element, {
   size: Cookies.get('size') || 'medium'
 })
 
+// 在启动时不生成相关提示信息
 Vue.config.productionTip = false
 
 new Vue({

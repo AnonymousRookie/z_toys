@@ -8,8 +8,9 @@ import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
+const whiteList = ['/login'] // no redirect whitelist
 
+// 导航守卫，在前端路由跳转中，路由跳转前都是会经过beforeEach，而beforeEach可以通过next来控制到底去哪个路由
 router.beforeEach(async(to, from, next) => {
     // start progress bar
     NProgress.start()
@@ -20,6 +21,8 @@ router.beforeEach(async(to, from, next) => {
     // determine whether the user has logged in
     const hasToken = getToken()
 
+    console.log('hasToken:', hasToken)
+
     if (hasToken) {
       if (to.path === '/login') {
         // if is logged in, redirect to the home page
@@ -28,6 +31,9 @@ router.beforeEach(async(to, from, next) => {
       } else {
         // determine whether the user has obtained his permission roles through getInfo
         const hasRoles = store.getters.roles && store.getters.roles.length > 0
+
+        console.log('store.getters.roles:', store.getters.roles)
+
         if (hasRoles) {
 
           console.log('to.path:', to.path)

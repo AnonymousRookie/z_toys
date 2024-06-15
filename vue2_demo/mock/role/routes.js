@@ -18,11 +18,6 @@ const constantRoutes = [
     hidden: true
   },
   {
-    path: '/auth-redirect',
-    component: 'views/login/auth-redirect',
-    hidden: true
-  },
-  {
     path: '/404',
     component: 'views/error-page/404',
     hidden: true
@@ -506,17 +501,6 @@ const asyncRoutes = [
         component: 'views/i18n-demo/index',
         name: 'I18n',
         meta: { title: 'I18n', icon: 'international' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: 'layout/Layout',
-    children: [
-      {
-        path: 'https://github.com/PanJiaChen/vue-element-admin',
-        meta: { title: 'External Link', icon: 'link' }
       }
     ]
   },

@@ -72,7 +72,6 @@ npm install vue-router@3
 npm install vuex@3
 npm install axios
 npm install js-cookie@2
-npm install sass-loader node-sass --save-dev
 npm install svg-sprite-loader@4 --save-dev
 npm install webpack@^5.0.0 --save-dev
 npm install nprogress
@@ -84,6 +83,11 @@ npm install screenfull
 npm install vue-count-to
 npm i path-browserify --save
 npm i normalize.css
+npm i sass --save-dev
+npm install --save-dev css-loader
+npm install --save-dev style-loader
+npm install sass-loader --save-dev
+npm install node-sass --save-dev
 ```
 
 ## 移除命令

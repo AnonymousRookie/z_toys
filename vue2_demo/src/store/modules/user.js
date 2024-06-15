@@ -34,14 +34,16 @@ const actions = {
     const { username, password } = userInfo
     console.log('store action login:', username, password )
     return new Promise((resolve, reject) => {
+      // 调用api中的login方法
       login({ username: username.trim(), password: password}).then(response => {
         const { data } = response
+        // 数据提交至mutations
         commit('SET_TOKEN', data.token)
         setToken(data.token)
-        console.log('store action login data', data)
+        console.log('store action login data:', data)
         resolve()
       }).catch(error => {
-        console.log('store action login error', error)
+        console.log('store action login error:', error)
         reject(error)
       })
     })

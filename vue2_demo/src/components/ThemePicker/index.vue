@@ -20,6 +20,7 @@ export default {
   },
   computed: {
     defaultTheme() {
+      console.log('defaultTheme:', this.$store.state.settings.theme)
       return this.$store.state.settings.theme
     }
   },
@@ -32,6 +33,10 @@ export default {
     },
     async theme(val) {
       const oldVal = this.chalk ? this.theme : ORIGINAL_THEME
+      console.log('oldVal:',oldVal)
+      console.log('this.chalk:',this.chalk)
+      console.log('this.theme:',this.theme)
+
       if (typeof val !== 'string') return
       const themeCluster = this.getThemeCluster(val.replace('#', ''))
       const originalCluster = this.getThemeCluster(oldVal.replace('#', ''))

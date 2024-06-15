@@ -17,6 +17,9 @@
           @editTodo="editTodo"
           @deleteTodo="deleteTodo"
         />
+        <div v-show="remaining==0&&visibility=='active'" class="new-todo">
+          <h3>我滴任务完成啦.<i class="el-icon-coffee-cup" /></h3>
+        </div>
       </ul>
     </section>
     <!-- footer -->
