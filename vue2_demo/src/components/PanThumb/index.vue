@@ -13,6 +13,7 @@
 <script>
 export default {
   name: 'PanThumb',
+  // props是组件之间进行数据传递的一种方式，可以将数据从父组件传递给子组件
   props: {
     image: {
       type: String,
