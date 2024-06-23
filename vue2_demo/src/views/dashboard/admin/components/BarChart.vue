@@ -3,8 +3,9 @@
 </template>
 
 <script>
-import echarts from 'echarts'
-require('echarts/theme/macarons') // echarts theme
+//import echarts from 'echarts'
+//require('echarts/theme/macarons') // echarts theme
+import * as echarts from 'echarts'
 import resize from './mixins/resize'
 
 const animationDuration = 6000
@@ -44,8 +45,8 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$el, 'macarons')
-
+      // this.chart = echarts.init(this.$el, 'macarons')
+      this.chart = echarts.init(this.$el)
       this.chart.setOption({
         tooltip: {
           trigger: 'axis',

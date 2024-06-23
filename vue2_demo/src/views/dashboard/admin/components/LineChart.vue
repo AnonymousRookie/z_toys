@@ -3,8 +3,9 @@
 </template>
 
 <script>
-import echarts from 'echarts'
-require('echarts/theme/macarons') // echarts theme
+//import echarts from 'echarts'
+//require('echarts/theme/macarons') // echarts theme
+import * as echarts from 'echarts'
 import resize from './mixins/resize'
 
 export default {
@@ -58,7 +59,8 @@ export default {
   },
   methods: {
     initChart() {
-      this.chart = echarts.init(this.$el, 'macarons')
+      // this.chart = echarts.init(this.$el, 'macarons')
+      this.chart = echarts.init(this.$el)
       this.setOptions(this.chartData)
     },
     setOptions({ expectedData, actualData } = {}) {
@@ -93,14 +95,13 @@ export default {
           data: ['预期', '实际']
         },
         series: [{
-          name: '预期', itemStyle: {
-            normal: {
-              color: '#FF005A',
-              lineStyle: {
-                color: '#FF005A',
-                width: 2
-              }
-            }
+          name: '预期', 
+          itemStyle: {
+            color: '#FF005A'
+          },
+          lineStyle: {
+            color: '#FF005A',
+            width: 2
           },
           smooth: true,
           type: 'line',
@@ -113,16 +114,14 @@ export default {
           smooth: true,
           type: 'line',
           itemStyle: {
-            normal: {
-              color: '#3888fa',
-              lineStyle: {
-                color: '#3888fa',
-                width: 2
-              },
-              areaStyle: {
-                color: '#f3f8ff'
-              }
-            }
+            color: '#3888fa'
+          },
+          lineStyle: {
+            color: '#3888fa',
+            width: 2
+          },
+          areaStyle: {
+            color: '#f3f8ff'
           },
           data: actualData,
           animationDuration: 2800,
