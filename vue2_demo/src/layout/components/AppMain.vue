@@ -2,6 +2,7 @@
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
       <keep-alive :include="cachedViews">
+        <!-- 路由挂载点 -->
         <router-view :key="key" />
       </keep-alive>
     </transition>

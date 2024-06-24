@@ -78,6 +78,7 @@ npm install nprogress
 npm install mockjs@1 --save-dev
 npm install echarts
 npm install fuse.js
+// Turn a path string such as `/user/:name` into a regular expression
 npm install path-to-regexp
 npm install screenfull
 npm install vue-count-to
@@ -88,6 +89,8 @@ npm install --save-dev css-loader
 npm install --save-dev style-loader
 npm install sass-loader --save-dev
 npm install node-sass --save-dev
+// 剪切板
+npm install clipboard
 ```
 
 ## 移除命令

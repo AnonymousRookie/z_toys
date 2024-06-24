@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     toggleClick() {
+      // 向父组件发送自定义事件
       this.$emit('toggleClick')
     }
   }

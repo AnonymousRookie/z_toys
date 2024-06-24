@@ -81,8 +81,8 @@ export default {
       return false
     },
     resolvePath(routePath) {
-      console.log('SidebarIyem.vue basePath:', this.basePath)
-      console.log('SidebarIyem.vue routePath:', routePath)
+      // console.log('SidebarIyem.vue basePath:', this.basePath)
+      // console.log('SidebarIyem.vue routePath:', routePath)
 
       if (isExternal(routePath)) {
         return routePath
@@ -92,7 +92,7 @@ export default {
       }
 
       // 返回绝对路径
-      console.log('SidebarIyem.vue path.resolve(this.basePath, routePath):', path.resolve(this.basePath, routePath))
+      // console.log('SidebarIyem.vue path.resolve(this.basePath, routePath):', path.resolve(this.basePath, routePath))
       return path.resolve(this.basePath, routePath)
     }
   }
