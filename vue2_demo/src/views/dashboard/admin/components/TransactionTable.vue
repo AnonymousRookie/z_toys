@@ -7,7 +7,7 @@
     </el-table-column>
     <el-table-column label="价格" width="195" align="center">
       <template slot-scope="scope">
-        ¥{{ scope.row.price | toThousandFilter }}
+        ¥{{ scope.row.price }}
       </template>
     </el-table-column>
     <el-table-column label="状态" width="100" align="center">

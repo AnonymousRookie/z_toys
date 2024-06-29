@@ -12,7 +12,7 @@
       class="header-search-select"
       @change="change"
     >
-      <el-option v-for="item in options" :key="item.path" :value="item" :label="item.title.join(' > ')" />
+      <el-option v-for="item in options" :key="item.item.path" :value="item.item" :label="item.item.title.join(' > ')" />
     </el-select>
   </div>
 </template>
@@ -56,6 +56,7 @@ export default {
   },
   mounted() {
     this.searchPool = this.generateRoutes(this.routes)
+    // console.log('this.searchPool:', this.searchPool)
   },
   methods: {
     click() {
@@ -129,8 +130,11 @@ export default {
       return res
     },
     querySearch(query) {
+      //console.log('querySearch(query) query:', query)
       if (query !== '') {
         this.options = this.fuse.search(query)
+        //console.log('this.fuse:', this.fuse)
+        // console.log('options:', this.options)
       } else {
         this.options = []
       }
