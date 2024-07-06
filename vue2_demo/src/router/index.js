@@ -5,6 +5,9 @@ Vue.use(Router)
 
 import Layout from '@/layout'
 
+/* Router Modules */
+import componentsRouter from './modules/components'
+
 /**
  * constantRoutes
  * a base page that does not have permission requirements
@@ -84,6 +87,9 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+  /** when your routing map is too long, you can split it into small modules **/
+  componentsRouter,
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

@@ -91,6 +91,7 @@ npm install sass-loader --save-dev
 npm install node-sass --save-dev
 // 剪切板
 npm install clipboard
+npm install vuedraggable
 ```
 
 ## 移除命令
